@@ -24,10 +24,7 @@ findspark.init()
 from pyspark.sql import SparkSession
 spark = SparkSession.builder.master("local[*]").getOrCreate()
 
-"""## Test Spark
-
-## Copy a data file to your local Colab environment
-"""
+"""## Copy a data file to your local Colab environment"""
 
 !wget https://raw.githubusercontent.com/futurexskill/bigdata/master/bank_prospects.csv
 
@@ -89,6 +86,8 @@ mean_salary
 
 """### Replace missing age with average value"""
 
+bankProspectsDF2.show()
+
 bankbankProspectsDF3 = bankProspectsDF2.na.fill(mean_age,["age"])
 
 bankbankProspectsDF3.show()
@@ -109,5 +108,5 @@ bankbankProspectsDF4.write.format("csv").save("bank_prospects_transformed")
 
 !ls bank_prospects_transformed/
 
-!cat bank_prospects_transformed/part-00000-2377a16e-0524-48af-98a6-3d0e153ce822-c000.csv
+!cat bank_prospects_transformed/part-00000-e3e9e3b6-be0c-45c2-a8f3-9f4be4663429-c000.csv
 
