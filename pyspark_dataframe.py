@@ -31,7 +31,7 @@ df.show()
 
 """## Copy a data file to your local Colab environment"""
 
-!wget https://raw.githubusercontent.com/futurexskill/bidata/master/retailstore.csv
+!wget https://onedollarskill.s3.amazonaws.com/AI/retailstore.csv
 
 """## Check if the file is copied"""
 
@@ -44,15 +44,13 @@ df.show()
 
 customerDF = spark.read.csv("retailstore.csv",header=True)
 
+type(customerDF)
+
 """## Print the dataset"""
 
 customerDF.show()
 
-customerDF.show(10)
-
-"""## View the schema of the dataframe"""
-
-customerDF.printSchema()
+customerDF.show(5)
 
 """## Get Statistical Summary of the DataFrame"""
 
@@ -70,7 +68,10 @@ customerDF.groupBy("country").count().show()
 
 customerDF.groupBy("gender").count().show()
 
-"""## Create a temporary table"""
+"""# Running SQL Queries Programmatically
+
+## Create a temporary table
+"""
 
 customerDF.createOrReplaceTempView("customer")
 
@@ -78,13 +79,11 @@ customerDF.createOrReplaceTempView("customer")
 
 results = spark.sql("select * from customer")
 
+type(results)
+
 """## Show the result fetched"""
 
 results.show()
-
-"""## Check the type"""
-
-type(results)
 
 """## Get the list of customers with age greater than 22"""
 
