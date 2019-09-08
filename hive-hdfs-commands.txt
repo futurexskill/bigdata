@@ -52,12 +52,17 @@ select age, country from retailcust where salary > 20000;
 drop table retailcust;
 
 dfs -ls data/
+dfs -ls /user/futurexskill/data/
 
-create external table retailcust (customerID int, age int,job String,maritalStatus String, gender String,salary float, hasaccount String) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LOCATION '/user/futurexskill/data/' TBLPROPERTIES ("skip.header.line.count"="1") ;
+create external table retailcustext (age INT, salary FLOAT,gender String,country String, purchased String) ROW FORMAT DELIMITED FIELDS TERMINATED BY ',' LOCATION '/user/futurexskill/data/' TBLPROPERTIES ("skip.header.line.count"="1") ;
 
-drop table retailcust;
+select * from retailcustext;
+
+drop table retailcustext;
 
 dfs -ls /user/futurexskill/data/
+
+
 
 dfs -ls /user/futurexskill/data/retailstore.csv
 
