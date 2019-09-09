@@ -74,3 +74,54 @@ create table bankprospectcleaned (age INT, salary FLOAT,gender String,country St
 show tables;
 
 select * from bankprospectcleaned;
+
+===========================================================
+
+
+============== bank_prospects.py =====================
+
+from pyspark.sql import SparkSession
+
+spark = SparkSession.builder.appName('SparkDFDemo').getOrCreate()
+
+bankProspectsDF = spark.read.csv("/user/futurexskill/bankraw/bank_prospects.csv",header=True)
+bankProspectsDF.show()
+"""## Remove the record with unknow value in country column"""
+bankProspectsDF1 = bankProspectsDF.filter(bankProspectsDF['country'] != "unknown")
+
+"""##  Cast the String datatype to Integer/Float"""
+from pyspark.sql.types import IntegerType,FloatType
+bankProspectsDF2 = bankProspectsDF1.withColumn("age", bankProspectsDF1["age"].cast(IntegerType())).withColumn("salary", bankProspectsDF1["salary"].cast(FloatType()))
+
+"""## Replace Age and Salary with average values of their respective column
+import mean from sql.fuctions
+"""
+
+from pyspark.sql.functions import mean
+
+"""### Calculate "mean" value of the age"""
+mean_age_val = bankProspectsDF2.select(mean(bankProspectsDF2['age'])).collect()
+mean_age = mean_age_val[0][0]
+
+"""### Calculate mean salary value"""
+mean_salary_val = bankProspectsDF2.select(mean(bankProspectsDF2['salary'])).collect()
+mean_salary = mean_salary_val[0][0]
+
+"""### Replace missing age with average value"""
+
+bankbankProspectsDF3 = bankProspectsDF2.na.fill(mean_age,["age"])
+bankbankProspectsDF3.show()
+"""### Replace missing age with salary value"""
+
+bankbankProspectsDF4 = bankbankProspectsDF3.na.fill(mean_salary,["salary"])
+
+# Print the content of transformed dataframe
+bankbankProspectsDF4.show()
+bankbankProspectsDF4.printSchema()
+
+### Write to a new transford folder
+
+bankbankProspectsDF4.write.format("csv").save("/user/futurexskill/bank-transformed")
+
+
+
