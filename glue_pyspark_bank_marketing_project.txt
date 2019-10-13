@@ -1,0 +1,48 @@
+import sys
+from awsglue.transforms import *
+from awsglue.utils import getResolvedOptions
+from pyspark.context import SparkContext
+from awsglue.context import GlueContext
+from awsglue.job import Job
+from awsglue.dynamicframe import DynamicFrame
+
+## @params: [JOB_NAME]
+args = getResolvedOptions(sys.argv, ['JOB_NAME'])
+
+sc = SparkContext()
+glueContext = GlueContext(sc)
+spark = glueContext.spark_session
+job = Job(glueContext)
+job.init(args['JOB_NAME'], args)
+## @type: DataSource
+## @args: [database = "bank-prospects", table_name = "bank_raw", transformation_ctx = "datasource0"]
+## @return: datasource0
+## @inputs: []
+datasource0 = glueContext.create_dynamic_frame.from_catalog(database = "bank-prospects", table_name = "bank_raw", transformation_ctx = "datasource0")
+
+bankProspectsDF = datasource0.toDF()
+
+bankProspectsDF1 = bankProspectsDF.filter(bankProspectsDF['country'] != "unknown")
+from pyspark.sql.types import IntegerType,FloatType
+bankProspectsDF2 = bankProspectsDF1.withColumn("age", bankProspectsDF1["age"].cast(IntegerType())).withColumn("salary", bankProspectsDF1["salary"].cast(FloatType()))
+from pyspark.sql.functions import mean
+mean_age_val = bankProspectsDF2.select(mean(bankProspectsDF2['age'])).collect()
+mean_age = mean_age_val[0][0]
+mean_salary_val = bankProspectsDF2.select(mean(bankProspectsDF2['salary'])).collect()
+mean_salary = mean_salary_val[0][0]
+bankbankProspectsDF3 = bankProspectsDF2.na.fill(mean_age,["age"])
+bankbankProspectsDF4 = bankbankProspectsDF3.na.fill(mean_salary,["salary"])
+
+dynamic_dframe = DynamicFrame.fromDF(bankbankProspectsDF4, glueContext, "dynamic_df")
+
+## @type: ApplyMapping
+## @args: [mapping = [("age", "long", "age", "long"), ("salary", "long", "salary", "long"), ("gender", "string", "gender", "string"), ("country", "string", "country", "string"), ("purchased", "string", "purchased", "string")], transformation_ctx = "applymapping1"]
+## @return: applymapping1
+## @inputs: [frame = datasource0]
+applymapping1 = ApplyMapping.apply(frame = dynamic_dframe, mappings = [("age", "long", "age", "long"), ("salary", "long", "salary", "long"), ("gender", "string", "gender", "string"), ("country", "string", "country", "string"), ("purchased", "string", "purchased", "string")], transformation_ctx = "applymapping1")
+## @type: DataSink
+## @args: [connection_type = "s3", connection_options = {"path": "s3://bank-transformed"}, format = "csv", transformation_ctx = "datasink2"]
+## @return: datasink2
+## @inputs: [frame = applymapping1]
+datasink2 = glueContext.write_dynamic_frame.from_options(frame = applymapping1, connection_type = "s3", connection_options = {"path": "s3://bank-transformed"}, format = "csv", transformation_ctx = "datasink2")
+job.commit()
