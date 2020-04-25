@@ -1,0 +1,159 @@
+
+################### Install Docker ###################################33
+
+sudo apt-get install docker -y
+
+sudo curl -sSL https://get.docker.com/ | sh
+
+sudo apt-get update && sudo apt-get upgrade -y
+
+sudo su
+
+docker --version
+docker run hello-world
+
+systemctl status docker
+
+################### Install Quick Start VM ###################################33
+
+
+docker pull cloudera/quickstart:latest
+
+docker images
+
+# 8888 hue port
+
+docker run --hostname=quickstart.cloudera --privileged=true -t -i -p 7180:7180 -p 8888:8888 cloudera/quickstart /usr/bin/docker-quickstart
+
+################### Explore HUE ###################################33
+
+#Hue
+http://http://35.232.248.144:8888//  (Change to IP address of your VM)
+
+#### 
+
+UserID : cloudera
+Password : cloudera
+
+#################################################################
+
+Hue Hive Editor
+
+
+show databases;
+
+create database if not exists fxxcoursedb
+use fxxcoursedb
+create table if not exists fxxcoursedb.fx_course_table(course_id string,course_name string,author_name string,no_of_reviews string)
+
+show tables
+
+insert into fxxcoursedb.fx_course_table VALUES(1,'Java','FutureX',45);
+insert into fxxcoursedb.fx_course_table VALUES (2,'Java','FutureXSkill',56);
+insert into fxxcoursedb.fx_course_table VALUES (3,'Big Data','Future',100);
+insert into fxxcoursedb.fx_course_table VALUES (4,'Linux','Future',100);
+insert into fxxcoursedb.fx_course_table VALUES (5,'Microservices','Future',100);
+insert into fxxcoursedb.fx_course_table VALUES (6,'CMS','',100);
+insert into fxxcoursedb.fx_course_table VALUES (7,'Python','FutureX','');
+insert into fxxcoursedb.fx_course_table VALUES (8,'CMS','Future',56);
+insert into fxxcoursedb.fx_course_table VALUES (9,'Dot Net','FutureXSkill',34);
+insert into fxxcoursedb.fx_course_table VALUES (10,'Ansible','FutureX',123);
+insert into fxxcoursedb.fx_course_table VALUES (11,'Jenkins','Future',32);
+insert into fxxcoursedb.fx_course_table VALUES (12,'Chef','FutureX',121);
+insert into fxxcoursedb.fx_course_table VALUES (13,'Go Lang','',105);
+alter table fxxcoursedb.fx_course_table set tblproperties('serialization.null.format'='');
+
+select * from fxxcoursedb.fx_course_table
+#################################################################
+
+
+############################## Upgrade to JDK 8 and Spark 2 ##############################
+
+java -version
+
+yum remove java -y
+
+yum install java-1.8.0-openjdk -y
+
+ls /usr/lib/jvm/jre-1.8.0-openjdk.x86_64
+
+export JAVA_HOME=/usr/lib/jvm/jre-1.8.0-openjdk.x86_64
+
+hadoop version
+
+2.6.0
+
+yum install wget
+
+wget https://archive.apache.org/dist/spark/spark-2.4.3/spark-2.4.3-bin-hadoop2.6.tgz
+
+tar -xvf spark-2.4.3-bin-hadoop2.6.tgz
+
+mv spark-2.4.3-bin-hadoop2.6  /usr/local/spark
+
+
+yum install nano
+
+cd /usr/bin
+
+ls *spark*
+
+nano pyspark
+nano spark-submit
+nano spark-shell
+nano spark-executor
+
+(Change to /usr/local/spark)
+
+
+spark-shell >
+ 
+val sampleSeq = Seq((1,"spark"),(2,"Big Data"))
+val df = spark.createDataFrame(sampleSeq).toDF("course id", "course name")
+df.show()
+
+======================================================================
+
+
+
+################# Test Spark with Hive ##########################################################
+
+su hdfs
+hdfs dfs -chmod 777 /tmp
+hdfs dfs -chmod 777 /tmp/hive
+
+su root
+spark-shell
+
+
+val courseDF = spark.sql("select * from fxxcoursedb.fx_course_table")
+
+sampleSeq_table
+spark-shell >
+ 
+val sampleSeq = Seq((1,"spark"),(2,"Big Data"))
+val df = spark.createDataFrame(sampleSeq).toDF("course id", "course name")
+df.show()
+df.createOrReplaceTempView("sampleSeq") 
+
+spark.sql("create table sampleSeq_table as select * from sampleSeq")
+val courseDF = spark.sql("select * from sampleSeq_table")
+
+===========================================================================================================
+===============   Running the Docker from a a fresh GCP VM Console ============================================= 
+===========================================================================================================
+## Find the docker container id
+
+docker ps
+
+CONTAINER ID        IMAGE                 COMMAND                  CREATED             STATUS              PORTS                                            NAMES
+fd35cb1fa8f9        cloudera/quickstart   "/usr/bin/docker-qui…"   4 hours ago         Up 4 hours          0.0.0.0:7180->7180/tcp, 0.0.0.0:8888->8888/tcp   condescending_mclean
+root@futurex-cdh:/home/futurexskill# docker exec -it fd35cb1fa8f9  bash
+
+###  Run it with container ID
+
+docker exec -it fd35cb1fa8f9  bash
+
+===========================================================================================================
+===========================================================================================================
+===========================================================================================================
