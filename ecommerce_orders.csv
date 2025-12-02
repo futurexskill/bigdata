@@ -1,0 +1,101 @@
+order_id,order_date,customer_id,product_name,category,quantity,unit_price,discount_percent,total_amount,country,status,payment_method,shipping_days
+1001,2025-01-15,5023,LAPTOP,Electronics,2,899.99,10,1619.98,USA,Completed,Credit Card,5
+1002,2025-01-18,5012,HEADPHONES,Electronics,1,79.99,0,79.99,UK,Completed,PayPal,3
+1003,2025-02-03,5045,KEYBOARD,Electronics,3,49.99,15,127.47,Canada,Shipped,Debit Card,7
+1004,2025-02-10,5008,MONITOR,Electronics,1,299.99,20,239.99,Germany,Completed,Bank Transfer,4
+1005,2025-02-14,5034,MOUSE,Electronics,5,29.99,5,142.45,France,Pending,Credit Card,
+1006,2025-03-02,5019,CHAIR,Furniture,1,199.99,10,179.99,Australia,Completed,PayPal,12
+1007,2025-03-08,5041,DESK,Furniture,2,349.99,0,699.98,Japan,Completed,Credit Card,8
+1008,2025-03-15,5007,LAMP,Furniture,3,39.99,5,113.97,India,Completed,Debit Card,14
+1009,2025-03-22,5028,NOTEBOOK,Stationery,10,4.99,0,49.90,USA,Completed,PayPal,2
+1010,2025-03-25,5016,PEN_SET,Stationery,4,12.99,10,46.76,UK,Cancelled,Credit Card,
+1011,2025-04-05,5050,BACKPACK,Accessories,1,59.99,15,50.99,Canada,Completed,Bank Transfer,6
+1012,2025-04-12,5033,WATER_BOTTLE,Accessories,3,19.99,0,59.97,Germany,Shipped,Debit Card,5
+1013,2025-04-20,5011,LAPTOP,Electronics,1,899.99,20,719.99,France,Completed,PayPal,3
+1014,2025-04-28,5042,HEADPHONES,Electronics,2,79.99,5,151.98,Australia,Completed,Credit Card,9
+1015,2025-05-03,5006,KEYBOARD,Electronics,1,49.99,0,49.99,Japan,Pending,Debit Card,
+1016,2025-05-10,5029,MONITOR,Electronics,1,299.99,10,269.99,India,Completed,Bank Transfer,11
+1017,2025-05-18,5014,MOUSE,Electronics,4,29.99,15,101.97,USA,Completed,PayPal,4
+1018,2025-05-25,5037,CHAIR,Furniture,2,199.99,20,319.98,UK,Completed,Credit Card,7
+1019,2025-06-02,5021,DESK,Furniture,1,349.99,5,332.49,Canada,Shipped,Debit Card,13
+1020,2025-06-08,5048,LAMP,Furniture,2,39.99,0,79.98,Germany,Completed,PayPal,5
+1021,2025-06-15,5009,NOTEBOOK,Stationery,8,4.99,10,35.93,France,Completed,Credit Card,3
+1022,2025-06-22,5031,PEN_SET,Stationery,2,12.99,15,22.08,Australia,Cancelled,Bank Transfer,
+1023,2025-06-28,5013,BACKPACK,Accessories,1,59.99,20,47.99,Japan,Completed,Debit Card,8
+1024,2025-07-05,5044,WATER_BOTTLE,Accessories,5,19.99,5,94.95,India,Completed,PayPal,6
+1025,2025-07-12,5018,LAPTOP,Electronics,1,899.99,0,899.99,USA,Completed,Credit Card,2
+1026,2025-07-20,5039,HEADPHONES,Electronics,3,79.99,10,215.97,UK,Shipped,Debit Card,
+1027,2025-07-27,5024,KEYBOARD,Electronics,2,49.99,15,84.98,Canada,Completed,Bank Transfer,9
+1028,2025-08-03,5005,MONITOR,Electronics,1,299.99,20,239.99,Germany,Completed,PayPal,4
+1029,2025-08-10,5047,MOUSE,Electronics,2,29.99,5,56.98,France,Pending,Credit Card,
+1030,2025-08-17,5015,CHAIR,Furniture,1,199.99,0,199.99,Australia,Completed,Debit Card,10
+1031,2025-08-24,5036,DESK,Furniture,1,349.99,10,314.99,Japan,Completed,Bank Transfer,7
+1032,2025-09-01,5022,LAMP,Furniture,4,39.99,5,151.96,India,Completed,PayPal,12
+1033,2025-09-08,5010,NOTEBOOK,Stationery,6,4.99,0,29.94,USA,Completed,Credit Card,3
+1034,2025-09-15,5043,PEN_SET,Stationery,3,12.99,15,33.12,UK,Cancelled,Debit Card,
+1035,2025-09-22,5017,BACKPACK,Accessories,2,59.99,20,95.98,Canada,Completed,Bank Transfer,5
+1036,2025-09-29,5030,WATER_BOTTLE,Accessories,1,19.99,10,17.99,Germany,Shipped,PayPal,8
+1037,2025-10-06,5046,LAPTOP,Electronics,2,899.99,5,1709.98,France,Completed,Credit Card,4
+1038,2025-10-13,5020,HEADPHONES,Electronics,1,79.99,0,79.99,Australia,Completed,Debit Card,6
+1039,2025-10-20,5038,KEYBOARD,Electronics,3,49.99,10,134.97,Japan,Completed,Bank Transfer,11
+1040,2025-10-27,5025,MONITOR,Electronics,1,299.99,15,254.99,India,Pending,PayPal,
+1041,2025-11-03,5008,MOUSE,Electronics,4,29.99,20,95.97,USA,Completed,Credit Card,3
+1042,2025-11-10,5049,CHAIR,Furniture,1,199.99,5,189.99,UK,Completed,Debit Card,7
+1043,2025-11-17,5027,DESK,Furniture,2,349.99,0,699.98,Canada,Shipped,Bank Transfer,9
+1044,2025-11-24,5011,LAMP,Furniture,1,39.99,10,35.99,Germany,Completed,PayPal,5
+1045,2025-11-30,5035,NOTEBOOK,Stationery,12,4.99,5,56.89,France,Completed,Credit Card,2
+1046,2025-01-20,5026,PEN_SET,Stationery,2,12.99,0,25.98,Australia,Completed,Debit Card,4
+1047,2025-02-05,5012,BACKPACK,Accessories,1,59.99,15,50.99,Japan,Cancelled,Bank Transfer,
+1048,2025-02-18,5040,WATER_BOTTLE,Accessories,4,19.99,20,63.97,India,Completed,PayPal,13
+1049,2025-03-01,5019,LAPTOP,Electronics,1,899.99,10,809.99,USA,Completed,Credit Card,3
+1050,2025-03-12,5032,HEADPHONES,Electronics,2,79.99,5,151.98,UK,Completed,Debit Card,6
+1051,2025-03-28,5007,KEYBOARD,Electronics,1,49.99,0,49.99,Canada,Shipped,Bank Transfer,8
+1052,2025-04-08,5045,MONITOR,Electronics,1,299.99,15,254.99,Germany,Completed,PayPal,5
+1053,2025-04-22,5016,MOUSE,Electronics,3,29.99,20,71.98,France,Pending,Credit Card,
+1054,2025-05-05,5028,CHAIR,Furniture,2,199.99,10,359.98,Australia,Completed,Debit Card,10
+1055,2025-05-19,5041,DESK,Furniture,1,349.99,5,332.49,Japan,Completed,Bank Transfer,7
+1056,2025-06-01,5023,LAMP,Furniture,3,39.99,0,119.97,India,Completed,PayPal,12
+1057,2025-06-14,5034,NOTEBOOK,Stationery,9,4.99,10,40.41,USA,Completed,Credit Card,2
+1058,2025-06-27,5006,PEN_SET,Stationery,1,12.99,15,11.04,UK,Cancelled,Debit Card,
+1059,2025-07-09,5050,BACKPACK,Accessories,2,59.99,20,95.98,Canada,Completed,Bank Transfer,6
+1060,2025-07-23,5014,WATER_BOTTLE,Accessories,3,19.99,5,56.97,Germany,Shipped,PayPal,9
+1061,2025-08-06,5042,LAPTOP,Electronics,1,899.99,0,899.99,France,Completed,Credit Card,4
+1062,2025-08-19,5029,HEADPHONES,Electronics,2,79.99,10,143.98,Australia,Completed,Debit Card,5
+1063,2025-09-02,5037,KEYBOARD,Electronics,4,49.99,15,169.97,Japan,Completed,Bank Transfer,8
+1064,2025-09-16,5009,MONITOR,Electronics,1,299.99,20,239.99,India,Pending,PayPal,
+1065,2025-09-30,5048,MOUSE,Electronics,2,29.99,5,56.98,USA,Completed,Credit Card,3
+1066,2025-10-14,5021,CHAIR,Furniture,1,199.99,0,199.99,UK,Completed,Debit Card,7
+1067,2025-10-28,5031,DESK,Furniture,2,349.99,10,629.98,Canada,Shipped,Bank Transfer,11
+1068,2025-11-11,5013,LAMP,Furniture,1,39.99,5,37.99,Germany,Completed,PayPal,6
+1069,2025-11-25,5044,NOTEBOOK,Stationery,7,4.99,0,34.93,France,Completed,Credit Card,2
+1070,2025-01-25,5018,PEN_SET,Stationery,3,12.99,15,33.12,Australia,Cancelled,Debit Card,
+1071,2025-02-12,5039,BACKPACK,Accessories,1,59.99,20,47.99,Japan,Completed,Bank Transfer,9
+1072,2025-03-05,5024,WATER_BOTTLE,Accessories,5,19.99,10,89.96,India,Completed,PayPal,5
+1073,2025-03-19,5005,LAPTOP,Electronics,2,899.99,5,1709.98,USA,Completed,Credit Card,3
+1074,2025-04-02,5047,HEADPHONES,Electronics,1,79.99,0,79.99,UK,Completed,Debit Card,4
+1075,2025-04-16,5015,KEYBOARD,Electronics,2,49.99,10,89.98,Canada,Shipped,Bank Transfer,
+1076,2025-04-30,5036,MONITOR,Electronics,1,299.99,15,254.99,Germany,Completed,PayPal,8
+1077,2025-05-14,5022,MOUSE,Electronics,3,29.99,20,71.98,France,Pending,Credit Card,
+1078,2025-05-28,5010,CHAIR,Furniture,1,199.99,5,189.99,Australia,Completed,Debit Card,10
+1079,2025-06-11,5043,DESK,Furniture,1,349.99,0,349.99,Japan,Completed,Bank Transfer,6
+1080,2025-06-25,5017,LAMP,Furniture,4,39.99,10,143.96,India,Completed,PayPal,13
+1081,2025-07-08,5030,NOTEBOOK,Stationery,11,4.99,5,52.40,USA,Completed,Credit Card,2
+1082,2025-07-22,5046,PEN_SET,Stationery,2,12.99,0,25.98,UK,Completed,Debit Card,5
+1083,2025-08-05,5020,BACKPACK,Accessories,1,59.99,15,50.99,Canada,Cancelled,Bank Transfer,
+1084,2025-08-19,5038,WATER_BOTTLE,Accessories,2,19.99,20,31.98,Germany,Completed,PayPal,7
+1085,2025-09-02,5025,LAPTOP,Electronics,1,899.99,10,809.99,France,Completed,Credit Card,4
+1086,2025-09-16,5008,HEADPHONES,Electronics,3,79.99,5,227.97,Australia,Shipped,Debit Card,9
+1087,2025-09-30,5049,KEYBOARD,Electronics,1,49.99,0,49.99,Japan,Completed,Bank Transfer,5
+1088,2025-10-14,5027,MONITOR,Electronics,2,299.99,15,509.98,India,Completed,PayPal,11
+1089,2025-10-28,5011,MOUSE,Electronics,4,29.99,20,95.97,USA,Pending,Credit Card,
+1090,2025-11-11,5035,CHAIR,Furniture,1,199.99,10,179.99,UK,Completed,Debit Card,6
+1091,2025-11-25,5026,DESK,Furniture,2,349.99,5,664.98,Canada,Completed,Bank Transfer,8
+1092,2025-02-08,5012,LAMP,Furniture,3,39.99,0,119.97,Germany,Completed,PayPal,4
+1093,2025-03-15,5040,NOTEBOOK,Stationery,8,4.99,10,35.93,France,Completed,Credit Card,3
+1094,2025-04-22,5019,PEN_SET,Stationery,1,12.99,15,11.04,Australia,Cancelled,Debit Card,
+1095,2025-05-30,5032,BACKPACK,Accessories,2,59.99,20,95.98,Japan,Completed,Bank Transfer,12
+1096,2025-07-07,5007,WATER_BOTTLE,Accessories,4,19.99,5,75.96,India,Shipped,PayPal,7
+1097,2025-08-14,5045,LAPTOP,Electronics,1,899.99,0,899.99,USA,Completed,Credit Card,2
+1098,2025-09-21,5016,HEADPHONES,Electronics,2,79.99,10,143.98,UK,Completed,Debit Card,5
+1099,2025-10-29,5028,KEYBOARD,Electronics,3,49.99,15,127.47,Canada,Completed,Bank Transfer,9
+1100,2025-11-28,5041,MONITOR,Electronics,1,299.99,20,239.99,Germany,Pending,PayPal,
