@@ -1,0 +1,21 @@
+order_id,product_name,category,country,payment_method,total_amount
+001,LAPTOP_PRO ,Electronics,USA,Credit Card,1299.99
+002,office chair,Furniture,Canada,Debit Card,299.50
+003, wireless_Mouse,Electronics,UK,PayPal,49.99
+004,DESK_LAMP,Furniture,USA,Credit Card,79.99
+005,notebook_SET ,Stationery,Germany,Bank Transfer,29.99
+006,USB Cable,Accessories,France,PayPal,15.99
+007,mechanical_KEYBOARD,Electronics,Australia,Debit Card,159.99
+008, MONITOR_4K,Electronics,India,Credit Card,599.99
+009,ergonomic_CHAIR ,Furniture,Canada,PayPal,449.99
+010,wireless HEADPHONES,Electronics,USA,Credit Card,199.99
+011, PRINTER_INK,Accessories,UK,Debit Card,39.99
+012,standing_desk,Furniture,Germany,Bank Transfer,599.00
+013,NOTEBOOK_PACK ,Stationery,France,Credit Card,19.99
+014, tablet_stand,Accessories,Australia,PayPal,34.99
+015,WEBCAM_HD,Electronics,India,Credit Card,89.99
+016,desk_ORGANIZER ,Accessories,USA,Debit Card,24.99
+017, LAPTOP_BAG,Accessories,Canada,PayPal,79.99
+018,monitor_STAND,Furniture,UK,Credit Card,149.99
+019,WIRELESS_CHARGER ,Electronics,Germany,Bank Transfer,44.99
+020,pen_SET,Stationery,France,Debit Card,12.99
